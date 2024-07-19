@@ -32,7 +32,11 @@ public class ExercisesLambdas {
     
     // ----------- Ejercicio 1 ----------
     public static String concat(String str1, String str2) {
-    	return "";
+    	List<String> con = new ArrayList<String>();
+    	con.add(str1);
+    	con.add(str2);
+    	Optional<String> res = con.stream().reduce((s1, s2) -> s1.concat(s2));
+    	return res.isPresent() ? res.get() : "";
     }
 
     // ----------- Ejercicio 2 ----------

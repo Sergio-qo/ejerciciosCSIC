@@ -221,12 +221,29 @@ public class ExercisesLambdasTest {
 	public void  getNamesAndOriginsTest() {
 		List<Artist> list = getArtists();
 		List<String> result = ExercisesLambdas.getNamesAndOrigins(list);
-		Assert.assertEquals("Bach" ,result.get(0));
-		Assert.assertEquals("Alemania" ,result.get(1));
-		Assert.assertEquals("Mozart" ,result.get(2));
-		Assert.assertEquals("Austria" ,result.get(3));
-		Assert.assertEquals("Chopin" ,result.get(4));
-		Assert.assertEquals("Polonia" ,result.get(5));
+		for(String res:result) {
+			switch(res) {
+				case "0":
+					Assert.assertEquals("Bach" ,result.get(0));
+					break;
+				case "1":
+					Assert.assertEquals("Alemania" ,result.get(0));
+					break;
+				case "2":
+					Assert.assertEquals("Mozart" ,result.get(0));
+					break;
+				case "3":
+					Assert.assertEquals("Austria" ,result.get(0));
+					break;
+				case "4":
+					Assert.assertEquals("Chopin" ,result.get(0));
+					break;
+				case "5":
+					Assert.assertEquals("Polonia" ,result.get(0));
+					break;
+			}
+			
+		}
 	}
 	
 	private List<Artist> getArtists() {

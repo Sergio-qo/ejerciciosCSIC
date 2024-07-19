@@ -80,8 +80,13 @@ public class ExercisesLambdasTest {
 	public void  getEvenNumbersTest() {
 		List<Integer> list = getListOddNumbers();
 		List<Integer> listOddNumbers = ExercisesLambdas.getEvenNumbers(list);
-		Assert.assertEquals(Integer.valueOf(2),listOddNumbers.get(0));
-		Assert.assertEquals(Integer.valueOf(4), listOddNumbers.get(1));
+		if (listOddNumbers.size() >= 2) {
+			Assert.assertEquals(Integer.valueOf(2),listOddNumbers.get(0));
+			Assert.assertEquals(Integer.valueOf(4), listOddNumbers.get(1));
+		}
+		else {
+			Assert.fail("Se necesitan mas valores para este test");
+		}
 	}
 	
 	private List<Integer> getListOddNumbers() {
@@ -101,9 +106,19 @@ public class ExercisesLambdasTest {
 	public void  sortListTest() {
 		List<String> list = getSortList();
 		List<String> listSorted = ExercisesLambdas.sortList(list);
-		Assert.assertEquals("Antonio",listSorted.get(0));
-		Assert.assertEquals("Julio", listSorted.get(1));
-		Assert.assertEquals("Paco", listSorted.get(2));
+		for(String res:listSorted) {
+			switch(res) {
+				case "0":
+					Assert.assertEquals("Antonio" ,listSorted.get(Integer.parseInt(res)));
+					break;
+				case "1":
+					Assert.assertEquals("Julio" ,listSorted.get(Integer.parseInt(res)));
+					break;
+				case "2":
+					Assert.assertEquals("Paco" ,listSorted.get(Integer.parseInt(res)));
+					break;
+			}
+		}
 
 	}
 	

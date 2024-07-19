@@ -265,8 +265,8 @@ public class ExercisesLambdasTest {
 	public void  getAlbumsWithAtMostThreeTracksTest() {
 		List<Album> list = getAlbums();
 		List<Album> result = ExercisesLambdas.getAlbumsWithAtMostThreeTracks(list);
-		Assert.assertEquals("Vivaldi" ,result.get(0).getMainMusician().getName());
 		Assert.assertEquals(1 ,result.size());
+		Assert.assertEquals("Vivaldi" ,result.get(0).getMainMusician().getName());
 	}
 	
 	private List<Album> getAlbums() {

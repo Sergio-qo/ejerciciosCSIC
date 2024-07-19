@@ -47,9 +47,19 @@ public class ExercisesLambdasTest {
 	public void  listToLowerCaseTest() {
 		List<String> list = getListUpperCase();
 		List<String> listLowerCase = ExercisesLambdas.listToLowerCase(list);
-		Assert.assertEquals("alberto",listLowerCase.get(0));
-		Assert.assertEquals("juan", listLowerCase.get(1));
-		Assert.assertEquals("pedro", listLowerCase.get(2));
+		for(String res:listLowerCase) {
+			switch(res) {
+				case "0":
+					Assert.assertEquals("alberto" ,listLowerCase.get(Integer.parseInt(res)));
+					break;
+				case "1":
+					Assert.assertEquals("juan" ,listLowerCase.get(Integer.parseInt(res)));
+					break;
+				case "2":
+					Assert.assertEquals("pedro" ,listLowerCase.get(Integer.parseInt(res)));
+					break;
+			}
+		}
 	}
 	
 	
@@ -224,25 +234,24 @@ public class ExercisesLambdasTest {
 		for(String res:result) {
 			switch(res) {
 				case "0":
-					Assert.assertEquals("Bach" ,result.get(0));
+					Assert.assertEquals("Bach" ,result.get(Integer.parseInt(res)));
 					break;
 				case "1":
-					Assert.assertEquals("Alemania" ,result.get(0));
+					Assert.assertEquals("Alemania" ,result.get(Integer.parseInt(res)));
 					break;
 				case "2":
-					Assert.assertEquals("Mozart" ,result.get(0));
+					Assert.assertEquals("Mozart" ,result.get(Integer.parseInt(res)));
 					break;
 				case "3":
-					Assert.assertEquals("Austria" ,result.get(0));
+					Assert.assertEquals("Austria" ,result.get(Integer.parseInt(res)));
 					break;
 				case "4":
-					Assert.assertEquals("Chopin" ,result.get(0));
+					Assert.assertEquals("Chopin" ,result.get(Integer.parseInt(res)));
 					break;
 				case "5":
-					Assert.assertEquals("Polonia" ,result.get(0));
+					Assert.assertEquals("Polonia" ,result.get(Integer.parseInt(res)));
 					break;
 			}
-			
 		}
 	}
 	

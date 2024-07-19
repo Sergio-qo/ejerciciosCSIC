@@ -1,23 +1,17 @@
 package es.csic.exercises;
 
-import es.csic.models.Album;
-import es.csic.models.Artist;
-
 import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.counting;
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.BiFunction;
-import java.util.stream.Collectors;
+import java.util.Optional;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
+
+import es.csic.models.Album;
+import es.csic.models.Artist;
 
 public class ExercisesLambdas {
 
@@ -29,7 +23,11 @@ public class ExercisesLambdas {
     }
 
     public static int sum(int a, int b) {
-        return 0;
+    	List<Integer> sum = new ArrayList<Integer>();
+    	sum.add(a);
+    	sum.add(b);
+    	Optional<Integer> res = sum.stream().reduce((num1, num2) -> num1 + num2);
+    	return res.isPresent() ? res.get() : 0;
     }
     
     // ----------- Ejercicio 1 ----------
